@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Secure Parking Anywhere, Anytime</h1>
+        <p>Connect with private parking space owners and save up to 70% on your parking costs. With real-time security monitoring and EV charging options.</p>
+        <div class="cta-buttons">
+            <a href="#find-parking" class="primary-button">Find Parking</a>
+            <a href="#list-space" class="secondary-button">List Your Space</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" id="features">
+    <div class="section-title">
+        <h2>Why Choose Parkin-It</h2>
+        <p>Our cutting-edge platform offers unique features designed to make parking safer, more convenient, and smarter.</p>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <h3>Real-time Security</h3>
+            <p>24/7 security camera monitoring for your peace of mind. Get live updates and alerts directly to your phone.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Anti-theft Insurance</h3>
+            <p>Every booking comes with comprehensive anti-theft insurance coverage up to $50,000.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-charging-station"></i>
+            </div>
+            <h3>EV Charging</h3>
+            <p>Filter for parking spots with EV charging capabilities and keep your electric vehicle powered up.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="section how-it-works" id="how-it-works">
+    <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Parking with Parkin-It is simple, quick, and secure. Here's how to get started.</p>
+    </div>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Search</h3>
+            <p>Find available parking spots near your destination based on your requirements.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Book</h3>
+            <p>Reserve your spot instantly with our secure payment system.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Park</h3>
+            <p>Follow the access instructions and park with confidence.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Relax</h3>
+            <p>Enjoy real-time monitoring and theft protection while you're away.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+    <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>Have questions or feedback? We'd love to hear from you.</p>
+    </div>
+    <div class="contact-form">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="contact-button">Send Message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
