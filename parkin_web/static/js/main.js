@@ -1,5 +1,3 @@
-// Main JavaScript for Parkin-it
-
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -79,4 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
 });

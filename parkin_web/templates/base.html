@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Parkin-It | Smart Parking Rental Platform{% endblock %}</title>
+    
+    <!-- Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/main.css') }}">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
         <nav>
-            <a href="/" class="logo">Parkin-<span>It</span></a>
+            <a href="/" class="logo">Parkin<span>-It</span></a>
             <ul class="nav-links">
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#find-parking">Find Parking</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#list-space" class="cta-button">List Your Space</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/find-parking">Find Parking</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#security">Security</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/list-space" class="cta-button">List Your Space</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -50,44 +58,44 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#find-parking">Find Parking</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#list-space">List Your Space</a></li>
+                    <li><a href="/#how-it-works">How It Works</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/find-parking">Find Parking</a></li>
+                    <li><a href="/#pricing">Pricing</a></li>
+                    <li><a href="/list-space">List Your Space</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Support</h3>
                 <ul class="footer-links">
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="/#contact">Contact Us</a></li>
+                    <li><a href="/help">Help Center</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Contact</h3>
-                <div class="contact-details">
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@parkin-it.com</p>
-                </div>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@parkin-it.com</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Parkin-It. All rights reserved.</p>
             <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Sitemap</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/sitemap">Sitemap</a>
             </div>
         </div>
     </footer>
     
     <!-- Scripts -->
-    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="/static/js/main.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

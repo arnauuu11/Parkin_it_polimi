@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Parkin-It{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-form">
+        <h2>Create Your Account</h2>
+        <p>Join Parkin-It and start saving on parking today!</p>
+        
+        <form id="register-form">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="user_type">I want to:</label>
+                <select id="user_type" name="user_type" required>
+                    <option value="driver">Find Parking</option>
+                    <option value="host">List My Space</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+            <button type="submit" class="auth-button">Create Account</button>
+        </form>
+        
+        <div class="auth-footer">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
