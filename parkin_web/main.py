@@ -4,7 +4,11 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 import os
+import sys
+from pathlib import Path
+import starlette.routing
 
+# Create the FastAPI app first
 app = FastAPI(
     title="Parkin-It",
     description="A secure parking rental platform connecting drivers with parking space owners",
@@ -121,4 +125,28 @@ async def api_root():
 # Add a health check endpoint that Vercel can use to verify your app is running
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {
+        "status": "healthy",
+        "environment": os.environ.get("VERCEL_ENV", "local"),
+        "directories": {
+            "static_exists": os.path.exists(static_dir),
+            "templates_exists": os.path.exists(templates_dir),
+        }
+    }
+
+# Special handler for Vercel - this needs to be AFTER all other routes
+@app.get("/{full_path:path}")
+async def catch_all(request: Request, full_path: str):
+    """
+    Catch-all route to handle all paths for Vercel serverless deployment.
+    """
+    try:
+        # Try to serve a template
+        return templates.TemplateResponse(f"{full_path}.html", {"request": request})
+    except Exception:
+        try:
+            # Fall back to index.html
+            return templates.TemplateResponse("index.html", {"request": request})
+        except Exception:
+            # If all else fails, return a JSON response
+            return {"error": "Page not found", "path": full_path}
