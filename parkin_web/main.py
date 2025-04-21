@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.responses import HTMLResponse
 import os
 
 app = FastAPI(
@@ -20,15 +20,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Adjust paths for Vercel deployment
+# Vercel uses a different directory structure in production
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Mount static files - make sure the directory exists
-static_dir = os.path.join(os.path.dirname(__file__), "static")
+static_dir = os.path.join(base_dir, "static")
 if not os.path.exists(static_dir):
     os.makedirs(static_dir)
     
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Set up templates
-templates_dir = os.path.join(os.path.dirname(__file__), "templates")
+templates_dir = os.path.join(base_dir, "templates")
+if not os.path.exists(templates_dir):
+    os.makedirs(templates_dir)
+    
 templates = Jinja2Templates(directory=templates_dir)
 
 @app.get("/", response_class=HTMLResponse)
@@ -111,6 +118,7 @@ async def api_root():
     """
     return {"message": "Welcome to Parkin-It API"}
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+# Add a health check endpoint that Vercel can use to verify your app is running
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
