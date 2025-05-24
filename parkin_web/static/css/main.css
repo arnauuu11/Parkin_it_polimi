@@ -1,13 +1,13 @@
 /* Main Styles for Parkin-it */
 
 :root {
-    --primary: #0a3d62;
-    --secondary: #2ecc71;
-    --accent: #1565C0;
+    --primary: #483DFF;    /* Main blue */
+    --secondary: #00C2FF;  /* Bright cyan-blue for contrast */
+    --accent: #7B73FF;     /* Lighter purple-blue for accents */
     --light: #ffffff;
     --dark: #212529;
     --gray: #6c757d;
-    --light-gray: #f8f9fa;
+    --light-gray: #F0F4FF; /* Very light blue-tinted background */
     --white: #ffffff;
 }
 
@@ -85,14 +85,14 @@ nav {
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 194, 255, 0.2);
 }
 
 .nav-links .cta-button:hover {
-    background-color: #27ae60;
+    background-color: #00a8e0; /* Darker version of secondary for hover */
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 194, 255, 0.3);
 }
 
 .hamburger {
@@ -103,7 +103,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(rgba(10, 61, 98, 0.85), rgba(10, 61, 98, 0.85)), url('/static/images/hero.jpg');
+    background-image: linear-gradient(rgba(72, 61, 255, 0.85), rgba(72, 61, 255, 0.75)), url('/static/images/hero.jpg');
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -156,13 +156,13 @@ nav {
 .primary-button {
     background-color: var(--secondary);
     color: white;
-    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 194, 255, 0.3);
 }
 
 .primary-button:hover {
-    background-color: #27ae60;
+    background-color: #00a8e0; /* Darker version of secondary */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 194, 255, 0.4);
 }
 
 .secondary-button {
@@ -335,7 +335,7 @@ nav {
 }
 
 .search-form button:hover {
-    background-color: #072f4a;
+    background-color: #3A32D9; /* Darker version of primary */
 }
 
 .map-container {
@@ -444,7 +444,7 @@ nav {
 }
 
 .plan-button:hover {
-    background-color: #27ae60;
+    background-color: #00a8e0; /* Darker version of secondary */
 }
 
 /* Security Section */
@@ -668,7 +668,7 @@ nav {
 }
 
 .contact-button:hover {
-    background-color: #072f4a;
+    background-color: #3A32D9; /* Darker version of primary */
 }
 
 .contact-info {
@@ -766,7 +766,7 @@ footer {
 }
 
 .footer-links a {
-    color: #b8c7d2;
+    color: #d4d8ff; /* Lighter shade of primary */
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -811,7 +811,7 @@ footer {
 }
 
 .footer-bottom p {
-    color: #b8c7d2;
+    color: #d4d8ff; /* Lighter shade of primary */
 }
 
 .footer-bottom-links {
@@ -820,7 +820,7 @@ footer {
 }
 
 .footer-bottom-links a {
-    color: #b8c7d2;
+    color: #d4d8ff; /* Lighter shade of primary */
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -853,7 +853,7 @@ footer {
 }
 
 .chatbot-button:hover {
-    background-color: #27ae60;
+    background-color: #00a8e0; /* Darker version of secondary */
 }
 
 .chatbot-container {
@@ -931,6 +931,72 @@ footer {
     padding: 0.8rem 1.2rem;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
+}
+
+/* Auth Pages */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    background-color: var(--light-gray);
+}
+
+.auth-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.auth-form h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.auth-form p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.auth-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.auth-button:hover {
+    background-color: #3A32D9; /* Darker version of primary */
+}
+
+.auth-footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--gray);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Styles */
